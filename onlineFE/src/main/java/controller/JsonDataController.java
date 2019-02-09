@@ -14,6 +14,7 @@ import model.dto.Item;
 
 
 
+@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/json/data")
 public class JsonDataController {

@@ -23,7 +23,7 @@ $(function() {
 	}
 
 	// code for jquery dataTable
-	var $table = $('#item');
+	var $table = $('#itemListTable');
 
 	// execute the below code only where we have this table
 	if ($table.length) {
@@ -96,7 +96,7 @@ $(function() {
 											+ '/item" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 									return str;
 								}
-							}
+							},
 
 					]
 

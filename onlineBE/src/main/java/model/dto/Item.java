@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@SuppressWarnings("unused")
 @Entity
 public class Item {
 	

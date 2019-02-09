@@ -8,7 +8,7 @@
 
 <div class="row">
 
-<p> <h3>This is Contact us page</h3> </p>
+<p> This is Contact us page </p>
 
 </div>
 
