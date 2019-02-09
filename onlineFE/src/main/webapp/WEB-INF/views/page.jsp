@@ -121,10 +121,16 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 
-			<!-- Load only when user clicks contact -->
+			<!-- Load only when user clicks list itmes -->
 			<c:if
 				test="${userClickAllItems == true or userClickCategoryItems==true }">
 				<%@include file="listItems.jsp"%>
+			</c:if>
+
+			<!-- Load only when user clicks show items -->
+			<c:if
+				test="${userClickShowItem == true}">
+				<%@include file="singleItem.jsp"%>
 			</c:if>
 
 
