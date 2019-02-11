@@ -13,6 +13,10 @@ $(function() {
 	case 'All Items':
 		$('#listItems').addClass('active');
 		break;
+	case 'Manage Items':
+		$('#manageItems').addClass('active');
+		break;
+		
 
 	default:
 		if (menu == "Home")

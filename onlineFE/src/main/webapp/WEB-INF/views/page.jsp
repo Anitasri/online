@@ -48,9 +48,12 @@
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script
 	src="//https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
-	
-	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
 
 <title>Online Order for Eatables-${title}</title>
 
@@ -131,11 +134,14 @@
 			</c:if>
 
 			<!-- Load only when user clicks show items -->
-			<c:if
-				test="${userClickShowItem == true}">
+			<c:if test="${userClickShowItem == true}">
 				<%@include file="singleItem.jsp"%>
 			</c:if>
-
+			
+			<!-- Load only when user clicks manage items -->
+			<c:if test="${userClickManageItems == true}">
+				<%@include file="manageItems.jsp"%>
+			</c:if>
 
 		</div>
 

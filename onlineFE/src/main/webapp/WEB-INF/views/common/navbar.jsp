@@ -39,7 +39,10 @@
             </li>
             <li id="listItems" class="nav-item">
               <a class="nav-link" href="${contextRoot }/show/all/items">Items</a>
-            </li>           
+            </li>   
+            <li id="manageItems" class="nav-item">
+              <a class="nav-link" href="${contextRoot }/manage/items">Manage Items</a>
+            </li>        
           </ul>
         </div>
         
