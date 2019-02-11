@@ -23,13 +23,6 @@ public class JsonDataController {
 	private ItemDAO itemDAO;
 	
 
-	/*@RequestMapping("/admin/all/items")
-	@ResponseBody
-	public List<Item> getAllItemsList() {		
-		return itemDAO.list();
-				
-	}*/	
-	
 	
 	@RequestMapping("/all/items")
 	@ResponseBody
