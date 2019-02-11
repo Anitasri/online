@@ -12,6 +12,7 @@ import com.anita.onlineBE.model.dao.CategoryDAO;
 import com.anita.onlineBE.model.dao.ItemDAO;
 import com.anita.onlineBE.model.dto.Category;
 import com.anita.onlineBE.model.dto.Item;
+import com.anita.onlineFE.exception.ItemNotFoundException;
 
 
 @Controller
@@ -101,18 +102,18 @@ public class PageController
 		return mv;
 	}
 
-	/*
-	 * Viewing a single item
-	 * */
+	//Viewing a single item
+	
 	
 	@RequestMapping(value = "/show/{id}/item") 
-	public ModelAndView showSingleItem(@PathVariable int id) { //throws ItemNotFoundException {
+	public ModelAndView showSingleItem(@PathVariable int id)  throws ItemNotFoundException {
+			
 		
 		ModelAndView mv = new ModelAndView("page");
 		
 		Item item = itemDAO.get(id);
 		
-		//if(item == null) throw new ItemNotFoundException();
+		if(item == null) throw new ItemNotFoundException();
 		
 		// update the view count
 		item.setViews(item.getViews() + 1);
