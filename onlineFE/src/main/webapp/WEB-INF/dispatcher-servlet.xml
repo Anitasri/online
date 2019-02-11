@@ -14,8 +14,8 @@
     http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd        
     ">
 
-	<context:component-scan base-package="controller"></context:component-scan>
-    <context:component-scan base-package="model"></context:component-scan>
+	<context:component-scan base-package="com.anita.onlineFE"></context:component-scan>
+    <context:component-scan base-package="com.anita.onlineBE"></context:component-scan>
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
