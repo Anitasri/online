@@ -72,7 +72,7 @@ INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_a
 VALUES ('ITMABCXYZDEFX', 'Sunrise Smoothie Bowl', 'Smoothie', 'Fresh cream, saffron cream and hung curd are combined to make a creamy topping for a crunchy chopped-fruits base. Garnished with more fruits', 91, 30, true, 3, 3, 0, 0 );
 --6th ITEM
 INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('ITMABCXYZGHIX', 'Mango Smoothie Bowl', 'Smoothie', 'A base of cut mixed fruits is covered in a delicious whisk of hung curd, fresh cream and mango and topped with another helping of fruits and mango yogurt', 91, 30, true, 3, 3, 0, 0 );
+VALUES ('ITMABCXYZGHIX', 'Mango Smoothie Bowl', 'Smoothie', 'A base of cut mixed fruits is covered in a delicious whisk of hung curd, fresh cream and mango and topped with another helping of fruits and mango yogurt', 91, 0, true, 3, 3, 0, 0 );
 
 
 

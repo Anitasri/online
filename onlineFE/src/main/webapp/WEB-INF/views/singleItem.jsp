@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+
 <div class="container">
 
 	<!-- Breadcrumb -->
@@ -49,19 +55,48 @@
 			</h4>
 			<hr />
 
+			<c:choose>
+
+				<c:when test="${item.quantity < 1}">
+
+					<h6>
+						Qty. Available: <span style="color: red">Out of Stock!</span>
+					</h6>
+
+				</c:when>
+				<c:otherwise>
+
+					<h6>Qty. Available: ${item.quantity}</h6>
+
+				</c:otherwise>
+
+			</c:choose>
 
 
 
-			<h6>Qty. Available:${item.quantity}</h6>
+			<c:choose>
+
+				<c:when test="${item.quantity < 1}">
+
+					<a href="javascript:void(0)" class="btn btn-success disabled"><strike>
+							<span class="glyphicon glyphicon-shopping-cart"></span> Add to
+							Cart
+					</strike></a>
+
+				</c:when>
+				<c:otherwise>
+
+					<a href="${contextRoot}/cart/add/${item.id}/product"
+						class="btn btn-success"> <span
+						class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+					</a>
 
 
 
-			<a href="${contextRoot}/cart/add/${item.id}/item"
-				class="btn btn-success"> <span
-				class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-			</a> 
-			<a href="${contextRoot}/show/all/items" class="btn btn-primary">
-				Back</a>
+
+				</c:otherwise>
+
+			</c:choose>
 
 		</div>
 
