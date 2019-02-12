@@ -8,15 +8,15 @@
 		<c:if test="${not empty message}">
 
 			<div class="col-xs-12">
-			
-			<div class="alert alert-success alert-dismissiable">
-			
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			
-			${message}
-			
-			</div>
-			
+
+				<div class="alert alert-success alert-dismissiable">
+
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+
+					${message}
+
+				</div>
+
 			</div>
 
 		</c:if>
@@ -35,7 +35,8 @@
 
 					<!-- Form elements -->
 					<sf:form class="form-horizontal" modelAttribute="item"
-						action="${contextRoot}/manage/items" method="POST">
+						action="${contextRoot}/manage/items" method="POST"
+						enctype="multipart/form-data">
 
 
 
@@ -48,7 +49,7 @@
 
 								<sf:input type="text" path="name" id="name"
 									placeholder="Item Name" class="form-control" />
-								<em class="help-block"> Please Enter Item Name</em>
+								<sf:errors path="name" cssClass="help-block" element="em" />
 
 
 							</div>
@@ -64,7 +65,7 @@
 
 								<sf:input type="text" path="foodType" id="foodType"
 									placeholder="Food Type" class="form-control" />
-								<em class="help-block"> Please Enter Food Type</em>
+								<sf:errors path="foodType" cssClass="help-block" element="em" />
 
 
 							</div>
@@ -81,7 +82,7 @@
 
 								<sf:textarea path="description" id="description" rows="4"
 									placeholder="Write a description" class="form-control" />
-
+								<sf:errors path="description" cssClass="help-block" element="em" />
 
 							</div>
 
@@ -96,7 +97,7 @@
 
 								<sf:input type="number" path="unitPrice" id="unitPrice"
 									placeholder="Unit Price" class="form-control" />
-								<em class="help-block"> Please Enter Food Price</em>
+								<sf:errors path="unitPrice" cssClass="help-block" element="em" />
 
 							</div>
 
@@ -108,12 +109,20 @@
 							<div class="col-md-8">
 								<sf:input type="number" path="quantity" id="quantity"
 									placeholder="Quantity" class="form-control" />
-								<em class="help-block"> Please Enter Food Quantity</em>
-
 							</div>
 
 						</div>
 
+						<!-- File element for image -->
+						<div class="form-group">
+							<label class="control-label col-md-4" for="file">Select
+								an image</label>
+
+							<div class="col-md-8">
+								<sf:input type="file" path="file" id="file" class="form-control" />
+							</div>
+
+						</div>
 
 						<div class="form-group">
 
