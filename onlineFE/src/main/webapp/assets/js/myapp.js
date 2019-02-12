@@ -122,5 +122,24 @@ $(function() {
 				});
 
 	}
+	
+	//dismissing the alert after 3secs
+	var $alert=$('.alert');
+	
+	if($alert.length) {
+		
+		setTimeout(function() {
+			$alert.fadeout('slow');
+		} ,3000);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 });

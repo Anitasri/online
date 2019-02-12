@@ -5,8 +5,21 @@
 
 	<div class="row">
 
+		<c:if test="${not empty message}">
 
+			<div class="col-xs-12">
+			
+			<div class="alert alert-success alert-dismissiable">
+			
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			
+			${message}
+			
+			</div>
+			
+			</div>
 
+		</c:if>
 
 		<div class="col-md-offset-2 col-md-8">
 
@@ -21,7 +34,10 @@
 				<div class="panel-body">
 
 					<!-- Form elements -->
-					<form class="form-horizontal">
+					<sf:form class="form-horizontal" modelAttribute="item"
+						action="${contextRoot}/manage/items" method="POST">
+
+
 
 						<div class="form-group">
 
@@ -30,9 +46,9 @@
 
 							<div class="col-md-8">
 
-								<input type="text" name="name" id="name" placeholder="Item Name"
-									class="form-control" /> <em class="help-block"> Please
-									Enter Item Name</em>
+								<sf:input type="text" path="name" id="name"
+									placeholder="Item Name" class="form-control" />
+								<em class="help-block"> Please Enter Item Name</em>
 
 
 							</div>
@@ -46,9 +62,9 @@
 
 							<div class="col-md-8">
 
-								<input type="text" name="foodType" id="foodType" placeholder="Food Type"
-									class="form-control" /> <em class="help-block"> Please
-									Enter Food Type</em>
+								<sf:input type="text" path="foodType" id="foodType"
+									placeholder="Food Type" class="form-control" />
+								<em class="help-block"> Please Enter Food Type</em>
 
 
 							</div>
@@ -58,11 +74,78 @@
 
 						<div class="form-group">
 
+							<label class="control-label col-md-4" for="description">Item
+								Description:</label>
+
+							<div class="col-md-8">
+
+								<sf:textarea path="description" id="description" rows="4"
+									placeholder="Write a description" class="form-control" />
+
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+							<label class="control-label col-md-4" for="unitPrice">Enter
+								Unit Price</label>
+
+							<div class="col-md-8">
+
+								<sf:input type="number" path="unitPrice" id="unitPrice"
+									placeholder="Unit Price" class="form-control" />
+								<em class="help-block"> Please Enter Food Price</em>
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-md-4" for="quantity">Quantity</label>
+
+							<div class="col-md-8">
+								<sf:input type="number" path="quantity" id="quantity"
+									placeholder="Quantity" class="form-control" />
+								<em class="help-block"> Please Enter Food Quantity</em>
+
+							</div>
+
+						</div>
+
+
+						<div class="form-group">
+
+							<label class="control-label col-md-4" for="categoryId">Select
+								Category:</label>
+
+							<div class="col-md-8">
+
+								<sf:select class="form-control" path="categoryId"
+									id="categoryId" items="${categories}" itemLabel="name"
+									itemValue="id" />
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
 
 							<div class="col-md-offset-4 col-md-8">
 
 								<input type="submit" name="submit" id="submit" value="Submit"
 									class="btn btn-primary" />
+
+								<!-- Hidden fields -->
+								<sf:hidden path="id" />
+								<sf:hidden path="code" />
+								<sf:hidden path="supplierId" />
+								<sf:hidden path="active" />
+								<sf:hidden path="purchases" />
+								<sf:hidden path="views" />
+
+
 
 							</div>
 
@@ -72,7 +155,7 @@
 
 
 
-					</form>
+					</sf:form>
 
 				</div>
 
