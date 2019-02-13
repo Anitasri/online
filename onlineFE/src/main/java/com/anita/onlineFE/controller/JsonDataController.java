@@ -32,6 +32,15 @@ public class JsonDataController {
 				
 	}
 	
+	
+	@RequestMapping("admin/all/items")
+	@ResponseBody
+	public List<Item> getAllItemsForAdmin() {
+		
+		return itemDAO.list();
+				
+	}
+	
 	@RequestMapping("/category/{id}/items")
 	@ResponseBody
 	public List<Item> getItemsByCategory(@PathVariable int id) {

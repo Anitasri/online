@@ -120,6 +120,8 @@
 
 							<div class="col-md-8">
 								<sf:input type="file" path="file" id="file" class="form-control" />
+								<sf:errors path="file" cssClass="help-block" element="em" />
+
 							</div>
 
 						</div>
@@ -154,15 +156,9 @@
 								<sf:hidden path="purchases" />
 								<sf:hidden path="views" />
 
-
-
 							</div>
 
 						</div>
-
-
-
-
 
 					</sf:form>
 
@@ -170,5 +166,115 @@
 
 			</div>
 		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12">
+			<h3>Available Items</h3>
+			<hr />
+		</div>
+
+		<div class="col-xs-12">
+			<div style="overflow: auto">
+
+				<!-- Item table for Admin -->
+
+				<table id="adminItemsTable"
+					class="table table-condensed table-bordered">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>&#160;</th>
+							<th>Name</th>
+							<th>Quantity</th>
+							<th>Unit Price</th>
+							<th>Active</th>
+							<th>Edit</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>4</td>
+							<td>
+							<img class="adminDataTableImg"
+								src="${contextRoot}/resources/images/"
+								ITMMNO123PQRX.jpg"
+							alt="Paneer Butter-Masala n Peas Pulao" />
+
+							</td>
+							<td>Paneer Butter-Masala n Peas Pulao</td>
+							<td>30</td>
+							<td>&#8377; 119.00/-</td>
+							<td>
+							
+							<!-- toggle swtich -->
+							<label class="switch"> <input type="checkbox"
+									checked="checked" value="4"/>
+									<div class="slider"></div>
+							</label>
+							
+							</td>
+							<td>
+							
+							<a href="${contextRoot}/manage/4/item" class="btn btn-warning">
+							<span class="glyphicon glyphicon-pencil"></span>
+							</a>
+							
+							</td>
+						</tr>
+						
+						<tr>
+							<td>4</td>
+							<td>
+							<img class="adminDataTableImg"
+								src="${contextRoot}/resources/images/"
+								ITMMNO123PQRX.jpg"
+							alt="Paneer Butter-Masala n Peas Pulao" />
+
+							</td>
+							<td>Paneer Butter-Masala n Peas Pulao</td>
+							<td>30</td>
+							<td>&#8377; 119.00/-</td>
+							<td>
+							
+							<!-- toggle swtich -->
+							<label class="switch"> <input type="checkbox"
+									checked="checked" value="4"/>
+									<div class="slider"></div>
+							</label>
+							
+							</td>
+							<td>
+							
+							<a href="${contextRoot}/manage/4/item" class="btn btn-warning">
+							<span class="glyphicon glyphicon-pencil"></span>
+							</a>
+							
+							</td>
+						</tr>
+						
+					</tbody>
+
+					<tfoot>
+						<tr>
+							<th>Id</th>
+							<th>&#160;</th>
+							<th>Name</th>
+							<th>Quantity</th>
+							<th>Unit Price</th>
+							<th>Active</th>
+							<th>Edit</th>
+						</tr>
+					</tfoot>
+
+				</table>
+
+			</div>
+
+		</div>
+
 	</div>
 </div>

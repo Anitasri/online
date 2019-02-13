@@ -22,6 +22,7 @@ import com.anita.onlineBE.model.dao.ItemDAO;
 import com.anita.onlineBE.model.dto.Category;
 import com.anita.onlineBE.model.dto.Item;
 import com.anita.onlineFE.util.FileUploadUtility;
+import com.anita.onlineFE.validator.ItemValidator;
 
 @Controller
 @RequestMapping("/manage")
@@ -67,6 +68,9 @@ public class ManagementController {
 	public String handleItemSubmission(@Valid @ModelAttribute("item") Item mItem, BindingResult results, Model model,
 			HttpServletRequest request) {
 
+		//new item validator
+		new ItemValidator().validate(mItem,results);
+		
 		// check for any errors
 		if (results.hasErrors()) {
 

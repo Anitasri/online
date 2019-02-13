@@ -20,20 +20,7 @@
 	content="Order online food site using Spring MVC and Hibernate">
 <meta name="_csrf" content="${_csrf.token}">
 <meta name="_csrf_header" content="${_csrf.headerName}">
-<link rel="stylesheet" type="text/css"
-	href="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" />
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
 
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css" />
-
-<script type="text/javascript"
-	src="https://maxcdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript"
-	src="https://maxcdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.18/jquery.min.js"></script>
 
 
 <link rel="stylesheet" type="text/css"
@@ -46,8 +33,7 @@
 <link rel="stylesheet" type="text/css"
 	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script
-	src="//https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -137,7 +123,7 @@
 			<c:if test="${userClickShowItem == true}">
 				<%@include file="singleItem.jsp"%>
 			</c:if>
-			
+
 			<!-- Load only when user clicks manage items -->
 			<c:if test="${userClickManageItems == true}">
 				<%@include file="manageItems.jsp"%>
@@ -156,11 +142,11 @@
 		<script src="${js}/jquery.dataTables.js"></script>
 		<script src="${js}/dataTables.bootstrap.js"></script>
 
-
+		<!-- Bootbox js -->
+		<script src="${js}/bootbox.min.js"></script>
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
-
 
 	</div>
 

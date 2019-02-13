@@ -41,7 +41,7 @@ public class Item {
 	private int quantity;
 
 	@Column(name = "is_active")
-	@JsonIgnore
+
 	private boolean active;
 
 	@Column(name = "category_id")

@@ -16,7 +16,6 @@ $(function() {
 	case 'Manage Items':
 		$('#manageItems').addClass('active');
 		break;
-		
 
 	default:
 		if (menu == "Home")
@@ -122,24 +121,57 @@ $(function() {
 				});
 
 	}
-	
-	//dismissing the alert after 3secs
-	var $alert=$('.alert');
-	
-	if($alert.length) {
-		
+
+	// dismissing the alert after 3secs
+	var $alert = $('.alert');
+
+	if ($alert.length) {
+
 		setTimeout(function() {
 			$alert.fadeout('slow');
-		} ,3000);
-		
+		}, 3000)
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	// ---------------------------------
+
+	$('.switch input[type="checkbox"]')
+			.on(
+					'change',
+					function() {
+
+						var checkbox = $(this);
+						var checked = checkbox.prop('checked');
+						var dMsg = (checked) ? 'You want to activate the item?'
+								: 'You want to deactivate the item?';
+						var value = checkbox.prop(value);
+
+						bootbox
+								.confirm({
+									size : 'medium',
+									title : 'Item Activation & Deactivation',
+									message : dMsg,
+									callback : function(confirmed) {
+
+										if (confirmed) {
+
+											console.log(value);
+											bootbox
+													.alert({
+														size : 'medium',
+														title : 'Information',
+														message : 'You are going to perform operation on item'
+																+ value,
+													});
+										} else {
+
+											checkbox.prop('checked', !checked);
+										}
+
+									}
+
+								});
+
+					});
 
 });
