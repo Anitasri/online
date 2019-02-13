@@ -2,6 +2,7 @@ package com.anita.onlineFE.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import com.anita.onlineBE.model.dao.CategoryDAO;
 import com.anita.onlineBE.model.dao.ItemDAO;
 import com.anita.onlineBE.model.dto.Category;
 import com.anita.onlineBE.model.dto.Item;
+import com.anita.onlineFE.util.FileUploadUtility;
 
 @Controller
 @RequestMapping("/manage")
@@ -62,7 +64,8 @@ public class ManagementController {
 
 	// Handling item submission
 	@RequestMapping(value = "/items", method = RequestMethod.POST)
-	public String handleItemSubmission(@Valid @ModelAttribute("item") Item mItem, BindingResult results, Model model) {
+	public String handleItemSubmission(@Valid @ModelAttribute("item") Item mItem, BindingResult results, Model model,
+			HttpServletRequest request) {
 
 		// check for any errors
 		if (results.hasErrors()) {
@@ -77,6 +80,11 @@ public class ManagementController {
 
 		// create a new item record
 		itemDAO.add(mItem);
+		
+		if(!mItem.getFile().getOriginalFilename().equals("")) {
+			FileUploadUtility.uploadFile(request,mItem.getFile(),mItem.getCode());
+			
+		}
 
 		return "redirect:/manage/items?operation=item";
 
