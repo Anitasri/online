@@ -218,12 +218,10 @@ $(function() {
 									str += '<label class="switch">';
 									if (data) {
 
-										str += '<input type="checkbox" checked="checked" value="'
-												+ row.id + '"/>';
+										str += '<input type="checkbox" checked="checked" value="'+row.id+'"/>';
 									} else {
 
-										str += '<input type="checkbox" value="'
-												+ row.id + '"/>';
+										str += '<input type="checkbox" value="'+row.id+'"/>';
 									}
 
 									str += '<div class="slider round"></div></label>';
@@ -254,7 +252,7 @@ $(function() {
 
 									var checkbox = $(this);
 									var checked = checkbox.prop('checked');
-									var dMsg = (checked) ? 'You want to activate the item?'
+ 									var dMsg = (checked) ? 'You want to activate the item?'
 											: 'You want to deactivate the item?';
 									var value = checkbox.prop('value');
 
@@ -277,11 +275,10 @@ $(function() {
 																message : data
 															});
 															
-														});
+														});		
 														
-														
-														
-													} else {
+													} 
+													else {
 
 														checkbox.prop('checked', !checked);
 													}

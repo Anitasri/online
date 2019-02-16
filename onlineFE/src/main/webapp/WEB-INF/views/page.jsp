@@ -46,7 +46,7 @@
 <script>
 	window.menu = '${title}';
 
-	window.contextRoot = '${contextRoot}';
+	window.contextRoot = '${contextRoot}'
 </script>
 
 

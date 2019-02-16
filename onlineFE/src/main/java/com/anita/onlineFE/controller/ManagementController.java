@@ -67,7 +67,6 @@ public class ManagementController {
 	
 	@RequestMapping(value="/{id}/item",method=RequestMethod.GET)
 	public ModelAndView showEditItem(@PathVariable int id) {
-
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Manage Items");
 		mv.addObject("userClickManageItems", true);
@@ -130,6 +129,7 @@ public class ManagementController {
 	@RequestMapping(value = "/item/{id}/activation", method=RequestMethod.POST)
 	@ResponseBody
 	public String handleItemActivation(@PathVariable int id) {		
+		
 		//is going to fetch the item from the database
 		Item item = itemDAO.get(id);
 		boolean isActive = item.isActive();
@@ -140,8 +140,8 @@ public class ManagementController {
 		//updating the item
 		itemDAO.update(item);		
 		return (isActive)? 
-				"Item Dectivated Successfully with the id"+item.getId(): 
-			    "Item Activated Successfully with the id"+item.getId();
+				"Item Deactivated Successfully with the id "+item.getId(): 
+			    "Item Activated Successfully with the id "+item.getId();
 	}
 	
 	// returning categories for all the request

@@ -51,7 +51,6 @@
 									placeholder="Item Name" class="form-control" />
 								<sf:errors path="name" cssClass="help-block" element="em" />
 
-
 							</div>
 
 						</div>
@@ -196,9 +195,7 @@
 						</tr>
 					</thead>
 
-					<tbody>
-						
-					</tbody>
+		
 
 					<tfoot>
 						<tr>
@@ -221,5 +218,3 @@
 
 	</div>
 </div>
-
-
