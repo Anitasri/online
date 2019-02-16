@@ -12,9 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.anita.onlineBE.model.dao.CategoryDAO;
@@ -62,15 +64,39 @@ public class ManagementController {
 		return mv;
 
 	}
+	
+	@RequestMapping(value="/{id}/item",method=RequestMethod.GET)
+	public ModelAndView showEditItem(@PathVariable int id) {
+
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Manage Items");
+		mv.addObject("userClickManageItems", true);
+        //fetch item from the database
+		Item nItem = itemDAO.get(id);
+		//set the item fetch from the database
+		mv.addObject("item", nItem);
+		return mv;
+
+	}
+	
 
 	// Handling item submission
 	@RequestMapping(value = "/items", method = RequestMethod.POST)
 	public String handleItemSubmission(@Valid @ModelAttribute("item") Item mItem, BindingResult results, Model model,
 			HttpServletRequest request) {
 
-		//new item validator
+		//handling image validation for new item
+		if(mItem.getId()==0) {
 		new ItemValidator().validate(mItem,results);
+		} 
 		
+		else {
+		if(!mItem.getFile().getOriginalFilename().equals("")) {
+		
+			new ItemValidator().validate(mItem,results);	
+		       }
+		    
+		}
 		// check for any errors
 		if (results.hasErrors()) {
 
@@ -81,9 +107,16 @@ public class ManagementController {
 		}
 
 		logger.info(mItem.toString());
-
-		// create a new item record
-		itemDAO.add(mItem);
+		
+		if(mItem.getId()==0) {	
+			// create a new item if id is zero
+		itemDAO.add(mItem); 
+		}
+		
+		else {
+			//update the item if id is not zero
+			itemDAO.update(mItem);	
+		}
 		
 		if(!mItem.getFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.uploadFile(request,mItem.getFile(),mItem.getCode());
@@ -93,7 +126,24 @@ public class ManagementController {
 		return "redirect:/manage/items?operation=item";
 
 	}
-
+	
+	@RequestMapping(value = "/item/{id}/activation", method=RequestMethod.POST)
+	@ResponseBody
+	public String handleItemActivation(@PathVariable int id) {		
+		//is going to fetch the item from the database
+		Item item = itemDAO.get(id);
+		boolean isActive = item.isActive();
+		
+		//activating and deactivating based on the value of active field 
+		item.setActive(!item.isActive());
+		
+		//updating the item
+		itemDAO.update(item);		
+		return (isActive)? 
+				"Item Dectivated Successfully with the id"+item.getId(): 
+			    "Item Activated Successfully with the id"+item.getId();
+	}
+	
 	// returning categories for all the request
 	@ModelAttribute("categories")
 	public List<Category> getCategories() {

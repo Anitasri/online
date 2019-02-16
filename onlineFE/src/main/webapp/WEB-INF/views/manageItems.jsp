@@ -175,10 +175,10 @@
 			<hr />
 		</div>
 
-		<div class="col-xs-12">
+		<div class="col-xs-10">
 			<div style="overflow: auto">
 
-				<!-- Item table for Admin -->
+				<!-- Items table for Admin -->
 
 				<table id="adminItemsTable"
 					class="table table-condensed table-bordered">
@@ -188,6 +188,7 @@
 							<th>Id</th>
 							<th>&#160;</th>
 							<th>Name</th>
+							<th>Food Type</th>
 							<th>Quantity</th>
 							<th>Unit Price</th>
 							<th>Active</th>
@@ -196,65 +197,6 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td>4</td>
-							<td>
-							<img class="adminDataTableImg"
-								src="${contextRoot}/resources/images/"
-								ITMMNO123PQRX.jpg"
-							alt="Paneer Butter-Masala n Peas Pulao" />
-
-							</td>
-							<td>Paneer Butter-Masala n Peas Pulao</td>
-							<td>30</td>
-							<td>&#8377; 119.00/-</td>
-							<td>
-							
-							<!-- toggle swtich -->
-							<label class="switch"> <input type="checkbox"
-									checked="checked" value="4"/>
-									<div class="slider"></div>
-							</label>
-							
-							</td>
-							<td>
-							
-							<a href="${contextRoot}/manage/4/item" class="btn btn-warning">
-							<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-							
-							</td>
-						</tr>
-						
-						<tr>
-							<td>4</td>
-							<td>
-							<img class="adminDataTableImg"
-								src="${contextRoot}/resources/images/"
-								ITMMNO123PQRX.jpg"
-							alt="Paneer Butter-Masala n Peas Pulao" />
-
-							</td>
-							<td>Paneer Butter-Masala n Peas Pulao</td>
-							<td>30</td>
-							<td>&#8377; 119.00/-</td>
-							<td>
-							
-							<!-- toggle swtich -->
-							<label class="switch"> <input type="checkbox"
-									checked="checked" value="4"/>
-									<div class="slider"></div>
-							</label>
-							
-							</td>
-							<td>
-							
-							<a href="${contextRoot}/manage/4/item" class="btn btn-warning">
-							<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-							
-							</td>
-						</tr>
 						
 					</tbody>
 
@@ -263,6 +205,7 @@
 							<th>Id</th>
 							<th>&#160;</th>
 							<th>Name</th>
+							<th>Food Type</th>
 							<th>Quantity</th>
 							<th>Unit Price</th>
 							<th>Active</th>
@@ -278,3 +221,5 @@
 
 	</div>
 </div>
+
+
