@@ -62,7 +62,7 @@
 
 			<div class="row">
 
-				<div class="col-md-6">
+				<div class="col-xs-12">
 
 					<table id="itemListTable" class="table table-striped table-borderd"
 						class="display">
