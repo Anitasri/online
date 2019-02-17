@@ -136,8 +136,6 @@ $(function() {
 
 	// ---------------------------------
 
-	
-
 	// data table for admin
 
 	// --------------------
@@ -149,7 +147,6 @@ $(function() {
 		// console.log('Inside the table!');
 
 		var jsonUrl = window.contextRoot + '/json/data/admin/all/items';
-	
 
 		$adminItemsTable
 				.DataTable({
@@ -218,10 +215,12 @@ $(function() {
 									str += '<label class="switch">';
 									if (data) {
 
-										str += '<input type="checkbox" checked="checked" value="'+row.id+'"/>';
+										str += '<input type="checkbox" checked="checked" value="'
+												+ row.id + '"/>';
 									} else {
 
-										str += '<input type="checkbox" value="'+row.id+'"/>';
+										str += '<input type="checkbox" value="'
+												+ row.id + '"/>';
 									}
 
 									str += '<div class="slider round"></div></label>';
@@ -229,66 +228,87 @@ $(function() {
 
 								}
 
-							}, {
+							},
+							{
 								data : 'id',
 								bSortable : false,
 								mRender : function(data, type, row) {
-									
+
 									var str = '';
-                                    str+='<a href="'+window.contextRoot+'/manage/'+data+'/item" class="btn btn-warning">'; 
-                                    str+='<span class="glyphicon glyphicon-pencil"></span></a>';
-                                    return str;
-									
+									str += '<a href="' + window.contextRoot
+											+ '/manage/' + data
+											+ '/item" class="btn btn-warning">';
+									str += '<span class="glyphicon glyphicon-pencil"></span></a>';
+									return str;
+
 								}
 
 							}
 
 					],
-					
-					initComplete: function() {
-						
-						var api=this.api();
-						api.$('.switch input[type="checkbox"]').on('change',function() {
 
-									var checkbox = $(this);
-									var checked = checkbox.prop('checked');
- 									var dMsg = (checked) ? 'You want to activate the item?'
-											: 'You want to deactivate the item?';
-									var value = checkbox.prop('value');
+					initComplete : function() {
 
-									bootbox.confirm({
-												size : 'medium',
-												title : 'Item Activation & Deactivation',
-												message : dMsg,
-												callback : function(confirmed) {
+						var api = this.api();
+						api
+								.$('.switch input[type="checkbox"]')
+								.on(
+										'change',
+										function() {
 
-													if (confirmed) {
+											var checkbox = $(this);
+											var checked = checkbox
+													.prop('checked');
+											var dMsg = (checked) ? 'You want to activate the item?'
+													: 'You want to deactivate the item?';
+											var value = checkbox.prop('value');
 
-														console.log(value);
-														
-														var activationUrl=window.contextRoot+'/manage/item/'+value+'/activation';
-														$.post(activationUrl,function(data){
-															
-															bootbox.alert({
-																size : 'medium',
-																title : 'Information',
-																message : data
-															});
-															
-														});		
-														
-													} 
-													else {
+											bootbox
+													.confirm({
+														size : 'small',
+														title : 'Item Activation & Deactivation',
+														message : dMsg,
+														callback : function(
+																confirmed) {
 
-														checkbox.prop('checked', !checked);
-													}
+															if (confirmed) {
 
-												}
+																console
+																		.log(value);
 
-											});
+																var activationUrl = window.contextRoot
+																		+ '/manage/item/'
+																		+ value
+																		+ '/activation';
+																$
+																		.post(
+																				activationUrl,
+																				function(
+																						data) {
 
-								});
-						
+																					bootbox
+																							.alert({
+																								size : 'small',
+																								title : 'Information',
+																								message : data
+																							});
+
+																				});
+
+															} else {
+
+																checkbox
+																		.prop(
+																				'checked',
+																				!checked);
+															}
+
+														}
+
+													});
+
+										});
+
 					}
 
 				});
@@ -297,4 +317,46 @@ $(function() {
 
 	// --------------------
 
+	// validate code for category
+	
+	//-------------------------------------------------------
+	var $categoryForm = $('#categoryForm');
+
+	if ($categoryForm.length) {
+
+		$categoryForm.validate({
+			rules : {
+				name : {
+					required : true,
+					minlength : 3
+				},
+				description : {
+					required : true,
+					minlength : 3
+				}
+			},
+			messages : {
+				name : {
+					required : 'Please enter category name!',
+					minlength : 'Please enter atleast three characters'
+				},
+				description : {
+					required : 'Please enter category description!',
+					minlength : 'Please enter atleast three characters'
+				}
+			},
+			errorElement : "em",
+			errorPlacement : function(error, element) {
+				//add the class of help-block
+				error.addClass('help-block');
+				//add the error element after the input element
+				error.insertAfter(element);
+			}
+		});
+
+	}
+
+	//-----------------------------------------------------------------
+	
+	
 });

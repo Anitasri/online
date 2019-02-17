@@ -41,24 +41,21 @@ public class ManagementController {
 
 	@RequestMapping(value = "/items", method = RequestMethod.GET)
 	public ModelAndView showManageItems(@RequestParam(name = "operation", required = false) String operation) {
-
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Manage Items");
 		mv.addObject("userClickManageItems", true);
-
 		Item nItem = new Item();
-
 		// set few of the fields
 		nItem.setSupplierId(1);
 		nItem.setActive(true);
-
 		mv.addObject("item", nItem);
-
 		if (operation != null) {
 			if (operation.equals("item")) {
 				mv.addObject("message", "Item submitted successfully!");
 			}
-
+			else if(operation.equals("category")) {
+				mv.addObject("message", "Category submitted successfully!");	
+			}
 		}
 
 		return mv;
@@ -144,10 +141,28 @@ public class ManagementController {
 			    "Item Activated Successfully with the id "+item.getId();
 	}
 	
+	//to handle new category submission
+	@RequestMapping(value = "/category", method=RequestMethod.POST)
+	public String handleCategorySubmission(@ModelAttribute Category category) {					
+		categoryDAO.add(category);		
+		return "redirect:/manage/items?operation=category";
+	}
+	
+	
+	
 	// returning categories for all the request
 	@ModelAttribute("categories")
 	public List<Category> getCategories() {
 		return categoryDAO.list();
 	}
 
+	//For adding a new category
+	@ModelAttribute("category")
+	public Category getCategory() {
+		return new Category();
+	}
+	
+	
+	
+	
 }

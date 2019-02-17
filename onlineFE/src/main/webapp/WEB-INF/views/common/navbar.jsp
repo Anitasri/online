@@ -9,9 +9,10 @@
             </ul>
         </div>
         
+        <!-- for space problem -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -19,11 +20,13 @@
          
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
         </div>
+        
+        <!-- ----------------------------- -->
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
@@ -46,9 +49,10 @@
           </ul>
         </div>
         
+        <!--  for space problem -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -56,7 +60,7 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -64,7 +68,7 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -72,7 +76,7 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -80,7 +84,7 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -88,7 +92,7 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
@@ -96,11 +100,13 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
               <a class="nav-link" href="#"></a>
             </li>
             </ul>
         </div>
+        
+        <!-- ----------------------------------- -->
          
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">

@@ -19,8 +19,11 @@
 <meta name="description"
 	content="Order online food site using Spring MVC and Hibernate">
 
+<!-- Bootstrap CSS -->
+
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -30,7 +33,6 @@
 	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-<!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -41,7 +43,7 @@
 <script>
 	window.menu = '${title}';
 
-	window.contextRoot = '${contextRoot}'
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -59,12 +61,9 @@
 	crossorigin="anonymous"></script>
 
 <!-- Custom styles for this template -->
-
 <link href="${css}/myapp.css" rel="stylesheet">
 
 </head>
-
-
 
 <body>
 
@@ -116,6 +115,8 @@
 
 		<!--JQuery and Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
+		<script src="${js}/jquery.validate.js"></script>
+		
 		<script src="${js}/bootstrap.min.js"></script>
 
 		<!-- Datatable plugin -->
