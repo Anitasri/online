@@ -21,29 +21,26 @@
 
 <!-- Bootstrap CSS -->
 
-<link rel="stylesheet" type="text/css"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css"
 	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	crossorigin="anonymous">
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 <title>Online Order for Eatables-${title}</title>
 
 <script>
 	window.menu = '${title}';
 
-	window.contextRoot = '${contextRoot}';
+	window.contextRoot = '${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -54,11 +51,6 @@
 
 <!-- Bootstarp Datatables -->
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-	integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-	crossorigin="anonymous"></script>
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
