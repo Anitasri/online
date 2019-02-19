@@ -45,14 +45,68 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean addCart(Cart cart) {
+	public boolean updateCart(Cart cart) {
 		try {			
 		
-			sessionFactory.getCurrentSession().persist(cart);			
+			sessionFactory.getCurrentSession().update(cart);			
 			return true;
 		}
 		catch(Exception ex) {
 			return false;
+		}
+	}
+
+	@Override
+	public User getByEmail(String email) {
+		// TODO Auto-generated method stub
+		String selectQuery ="FROM User WHERE email=:email";
+		try {
+			return sessionFactory
+					.getCurrentSession()
+						.createQuery(selectQuery,User.class)
+							.setParameter("email",email)
+								.getSingleResult();
+			
+		}
+	catch(Exception ex) {
+		ex.printStackTrace();
+		return null;
+	}
+	
+	
+	}
+
+	@Override
+	public Address getBillingAddress(User user) {
+		String selectQuery = "FROM Address WHERE user = :user AND billing = :billing";
+		try {
+		return sessionFactory
+				.getCurrentSession()
+					.createQuery(selectQuery,Address.class)
+						.setParameter("user", user)
+						.setParameter("billing", true)
+							.getSingleResult();
+		}
+		catch(Exception ex) {
+			return null;
+		}
+		
+	}
+
+	@Override
+	public List<Address> listShippingAddresses(User user) {
+		// TODO Auto-generated method stub
+		String selectQuery = "FROM Address WHERE user = :user AND shipping = :shipping";
+		try{
+		return sessionFactory
+				.getCurrentSession()
+					.createQuery(selectQuery,Address.class)
+						.setParameter("user", user)
+						.setParameter("shipping", true)
+						.getResultList();
+		}
+		catch(Exception ex) {
+			return null;
 		}
 	}
 
