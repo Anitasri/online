@@ -31,9 +31,11 @@
 
 <link rel="stylesheet" type="text/css"
 	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 <title>Online Order for Eatables-${title}</title>
 
@@ -63,68 +65,8 @@
 
 		<!-- Navigation -->
 
-		<%@include file="./common/navbar.jsp"%>
-		
+		<%@include file="flows-navbar.jsp"%>
 
 		<!-- Page Content -->
-		
 
 		<div class="content">
-
-			<!-- Loading the home content -->
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks about -->
-			<c:if test="${userClickAbout == true }">
-				<%@include file="about.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks contact -->
-			<c:if test="${userClickContact == true }">
-				<%@include file="contact.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks list itmes -->
-			<c:if
-				test="${userClickAllItems == true or userClickCategoryItems==true }">
-				<%@include file="listItems.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks show items -->
-			<c:if test="${userClickShowItem == true}">
-				<%@include file="singleItem.jsp"%>
-			</c:if>
-
-			<!-- Load only when user clicks manage items -->
-			<c:if test="${userClickManageItems == true}">
-				<%@include file="manageItems.jsp"%>
-			</c:if>
-
-		</div>
-
-		<!-- Footer -->
-		<%@include file="./common/footer.jsp"%>
-
-		<!--JQuery and Bootstrap core JavaScript -->
-		<script src="${js}/jquery.js"></script>
-		<script src="${js}/jquery.validate.js"></script>
-		
-		<script src="${js}/bootstrap.min.js"></script>
-
-		<!-- Datatable plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		<script src="${js}/dataTables.bootstrap.js"></script>
-
-		<!-- Bootbox js -->
-		<script src="${js}/bootbox.min.js"></script>
-
-		<!-- Self coded javascript -->
-		<script src="${js}/myapp.js"></script>
-
-	</div>
-
-</body>
-
-</html>

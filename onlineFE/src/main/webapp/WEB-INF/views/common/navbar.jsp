@@ -9,25 +9,6 @@
             </ul>
         </div>
         
-        <!-- for space problem -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-         
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-        
-        <!-- ----------------------------- -->
-        
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           
@@ -47,77 +28,15 @@
               <a class="nav-link" href="${contextRoot }/manage/items">Manage Items</a>
             </li>        
           </ul>
-        </div>
-        
-        <!--  for space problem -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
+          
+          <ul class="nav navbar-nav navbar-right">
+          <li id="register" class="nav-item">
+              <a class="nav-link" href="${contextRoot }/register">Sign Up</a>
             </li>
-            </ul>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
+          <li id="login" class="nav-item">
+              <a class="nav-link" href="${contextRoot }/login">Login</a>
             </li>
-            </ul>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            </ul>
-        </div>
-        
-        <!-- ----------------------------------- -->
-         
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#">SignUp</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-            </ul>
-         </div>      
-      
+          </ul>
+        </div>    
       </div>
     </nav>

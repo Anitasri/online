@@ -14,8 +14,12 @@
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+		<spring.version>5.1.1.RELEASE</spring.version>
+		<hibernate.version>5.3.7.Final</hibernate.version>
+		<jackson.version>2.9.5</jackson.version>
 	</properties>
+
+	<!-- JUNIT VERSION 4.12 -->
 
 	<dependencies>
 		<dependency>
@@ -25,32 +29,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Hibernate -->
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.3.7.Final</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>5.4.1.Final</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
-		</dependency>
-
 		<!-- Spring dependency -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>5.1.1.RELEASE</version>
+			<version>${spring.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>commons-logging</groupId>
@@ -62,20 +46,34 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>5.1.1.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>5.1.1.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
+		<!-- H2 Database -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>5.1.1.RELEASE</version>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.197</version>
+		</dependency>
+
+		<!-- Hibernate -->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 
 		<!-- Database connection pooling -->
@@ -96,15 +94,15 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.5</version>
+			<version>${jackson.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.5</version>
+			<version>${jackson.version}</version>
 		</dependency>
-
+		
 		<!-- SLF4J Logging -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -117,18 +115,20 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.24</version>
 		</dependency>
-
-
-
-
+		
+		<!-- Hibernate Validator -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.197</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.4.1.Final</version>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
 	</dependencies>
-
 
 	<build>
 		<!-- Updated for the latest version of JAVA -->
@@ -143,8 +143,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-
 
 </project>
