@@ -15,12 +15,13 @@ public interface UserDAO {
 	// add an address
 	boolean addAddress(Address address);
    
-	/* Alternative = runs so many queries
-	Address getBillingAddress(int userId);
-	List<Address> listShippingAddresses(int userId);*/
 	
-	Address getBillingAddress(User user);
-	List<Address> listShippingAddresses(User user);
+	Address getBillingAddress(int userId);
+	List<Address> listShippingAddresses(int userId);
+	
+	// Alternative = runs so many queries
+	//Address getBillingAddress(User user);
+	//List<Address> listShippingAddresses(User user);
     
 	// add an cart
 	boolean updateCart(Cart cart);

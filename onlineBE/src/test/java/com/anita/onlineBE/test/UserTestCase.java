@@ -165,7 +165,7 @@ public class UserTestCase {
 	} */
 	
 	
-	@Test
+	/*@Test
 	public void testGetAddress() {
 	
 		user=userDAO.getByEmail("hr@gmail.com");
@@ -176,6 +176,6 @@ public class UserTestCase {
 		
 		
 		
-	}
+	}*/
 	
 }
