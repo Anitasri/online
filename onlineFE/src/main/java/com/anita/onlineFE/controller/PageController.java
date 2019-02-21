@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.anita.onlineBE.model.dao.CategoryDAO;
@@ -130,6 +131,20 @@ public class PageController
 		return mv;
 		
 	}
+	
+	@RequestMapping(value="/login")
+	public ModelAndView login(@RequestParam(name="error", required = false)	String error) {
+		ModelAndView mv= new ModelAndView("login");
+		mv.addObject("title", "Login");
+		if(error!=null) {
+			mv.addObject("message", "Username and Password is invalid!");
+		}
+		
+		return mv;
+	}
+	
+	
+	
 	
 	//having similar mapping for flow id
 	@RequestMapping(value = {"/register"})

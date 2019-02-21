@@ -16,8 +16,7 @@
 
 	<context:component-scan
 		base-package="com.anita.onlineFE"></context:component-scan>
-	<context:component-scan
-		base-package="com.anita.onlineBE"></context:component-scan>
+	
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -49,7 +48,7 @@
 	</wf:flow-registry>
 
 	<wf:flow-builder-services
-		id="flowBuilderServices" view-factory-creator="viewFactoryCreator" />
+		id="flowBuilderServices" view-factory-creator="viewFactoryCreator" validator="validator" />
 
 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
     <property name="flowExecutor" ref="flowExecutor" />
@@ -64,6 +63,9 @@
 	class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
 	<property name="viewResolvers" ref="viewResolver" />
 	</bean>
+
+<!-- Vaidator bean -->
+<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 
 </beans>
