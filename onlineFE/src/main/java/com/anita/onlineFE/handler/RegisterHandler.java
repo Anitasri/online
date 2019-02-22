@@ -3,6 +3,7 @@ package com.anita.onlineFE.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.anita.onlineBE.model.dao.UserDAO;
@@ -14,6 +15,10 @@ import com.anita.onlineFE.model.RegisterModel;
 @Component
 public class RegisterHandler {
 
+
+	 @Autowired
+	 private BCryptPasswordEncoder passwordEncoder;
+	
 	@Autowired
 	private UserDAO userDAO;
 
@@ -55,6 +60,10 @@ public class RegisterHandler {
 			cart.setUser(user);
 			user.setCart(cart);
 		}
+		
+		//encode the password
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		
 		// save the user
 		userDAO.addUser(user);
 		// save the billing address

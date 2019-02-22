@@ -143,8 +143,14 @@ public class PageController
 		return mv;
 	}
 	
-	
-	
+	@RequestMapping(value="/access-denied")
+	public ModelAndView accessDenied() {
+		ModelAndView mv = new ModelAndView("error");		
+		mv.addObject("errorTitle", "Non-Accessible page");		
+		mv.addObject("errorDescription", "You are not authorized to view this page!");		
+		mv.addObject("title", "403 Access Denied");		
+		return mv;
+	}	
 	
 	//having similar mapping for flow id
 	@RequestMapping(value = {"/register"})

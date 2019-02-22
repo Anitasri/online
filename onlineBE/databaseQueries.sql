@@ -25,6 +25,7 @@ CREATE TABLE user_detail (
 	email VARCHAR(100),
 	contact_number VARCHAR(15),	
 	CONSTRAINT pk_user_id PRIMARY KEY(id)
+	
 );
 
 
