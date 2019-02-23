@@ -32,13 +32,13 @@ CREATE TABLE user_detail (
 -- adding three users 
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Anita', 'Sri', 'USER', true, '$2a$06$ORtBskA2g5Wg0HDgRE5ZsOQNDHUZSdpJqJ2.PGXv0mKyEvLnKP7SW', 'as@gmail.com', '8888888888');
+VALUES ('Anita', 'Sri', 'ADMIN', true, '$2y$12$tEW50HtLvl1KtqjpsZ1XNOjGkqrq.2mV8k2kxibua4vpIO/SyM/p2', 'as@gmail.com', '8888888888');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Rahul', 'karna', 'SUPPLIER', true, '$2a$06$bzYMivkRjSxTK2LPD8W4te6jjJa795OwJR1Of5n95myFsu3hgUnm6', 'rk@gmail.com', '9999999999');
+VALUES ('Shahid', 'Kapoor', 'USER', true, '$2a$10$8PQUj4CVQUYkyYF..Q9TvuVDByfJ3XUHAl31JZzxwNa6NuDGbBWL2', 'shka@gmail.com', '1111111111');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Keerthi', 'Das', 'SUPPLIER', true, '$2a$06$i1dLNlXj2uY.UBIb9kUcAOxCigGHUZRKBtpRlmNtL5xtgD6bcVNOK', 'kd@gmail.com', '7777777777');
+VALUES ('Keerthi', 'Das', 'SUPPLIER', true, '$2y$12$icRl6mClcIeZPpbrp8B9t.VT6X8yq3ETiZzw7owzASw/eqZ4Hrdoy', 'kd@gmail.com', '7777777777');
 
 
 CREATE TABLE item (

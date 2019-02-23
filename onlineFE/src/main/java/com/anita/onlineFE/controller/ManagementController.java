@@ -162,7 +162,4 @@ public class ManagementController {
 		return new Category();
 	}
 	
-	
-	
-	
 }

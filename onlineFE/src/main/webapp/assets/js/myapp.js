@@ -115,20 +115,34 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 											+ '/show/'
 											+ data
 											+ '/item" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
-									if (row.quantiy < 1) {
-										str += '<a href="javascript:void(0)" class="btn btn-warning disabled" role="button" aria-disabled="true"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
-										return str;
-									} else {
 
-										str += '<a href="'
-												+ window.contextRoot
-												+ '/cart/add/'
-												+ data
-												+ '/item" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
-										return str;
+									
+								
+										if (row.quantity < 1) {
+											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+										} else {
+											
+											if(userRole=='ADMIN'){
+												str += '<a href="'
+													+ window.contextRoot
+													+ '/manage/'
+													+ data
+													+ '/item" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
+											}
+											
+											else {
+	
+											str += '<a href="'
+													+ window.contextRoot
+													+ '/cart/add/'
+													+ data
+													+ '/item" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+										}
+										}
+									return str;
+										}
+										
 									}
-								}
-							},
 
 					]
 
@@ -248,10 +262,13 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 								mRender : function(data, type, row) {
 
 									var str = '';
-									str += '<a href="' + window.contextRoot
-											+ '/manage/' + data
-											+ '/item" class="btn btn-warning">';
-									str += '<span class="glyphicon glyphicon-pencil"></span></a>';
+									
+									str += '<a href="'
+											+ window.contextRoot
+											+ '/manage/'
+											+ data
+											+ '/item" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a> &#160;';
+
 									return str;
 
 								}
