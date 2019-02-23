@@ -64,7 +64,10 @@
 
 				<div class="col-xs-12">
 
-					<table id="itemListTable" class="table table-striped table-borderd"
+					<div class="container-fluid">
+						<div class="table-responsive">
+						
+											<table id="itemListTable" class="table table-striped table-borderd"
 						class="display">
 
 						<thead>
@@ -101,7 +104,10 @@
 						</tfoot>
 
 					</table>
-
+						
+						</div>
+					</div>
+					
 				</div>
 
 			</div>

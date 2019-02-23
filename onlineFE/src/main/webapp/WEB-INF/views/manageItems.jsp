@@ -186,45 +186,46 @@
 		</div>
 
 		<div class="col-xs-12">
-			<div style="overflow: auto">
 
-				<!-- Items table for Admin -->
+			<div class="container-fluid">
+				<div class="table-responsive">
+					<!-- Items table for Admin -->
 
-				<table id="adminItemsTable"
-					class="table table-condensed table-bordered">
+					<table id="adminItemsTable"
+						class="table table-condensed table-bordered">
 
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>&#160;</th>
-							<th>Name</th>
-							<th>Food Type</th>
-							<th>Quantity</th>
-							<th>Unit Price</th>
-							<th>Active</th>
-							<th>Edit</th>
-						</tr>
-					</thead>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>&#160;</th>
+								<th>Name</th>
+								<th>Food Type</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Active</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
 
 
 
-					<tfoot>
-						<tr>
-							<th>Id</th>
-							<th>&#160;</th>
-							<th>Name</th>
-							<th>Food Type</th>
-							<th>Quantity</th>
-							<th>Unit Price</th>
-							<th>Active</th>
-							<th>Edit</th>
-						</tr>
-					</tfoot>
+						<tfoot>
+							<tr>
+								<th>Id</th>
+								<th>&#160;</th>
+								<th>Name</th>
+								<th>Food Type</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Active</th>
+								<th>Edit</th>
+							</tr>
+						</tfoot>
 
-				</table>
+					</table>
 
+				</div>
 			</div>
-
 		</div>
 
 	</div>
@@ -244,21 +245,25 @@
 				<div class="modal-body">
 
 					<!-- Category form-->
-					<sf:form id="categoryForm" class="form-horizontal" modelAttribute="category"
-						action="${contextRoot}/manage/category" method="POST">
+					<sf:form id="categoryForm" class="form-horizontal"
+						modelAttribute="category" action="${contextRoot}/manage/category"
+						method="POST">
 
 						<div class="form-group">
-							<label for="category_name" class="control-label col-md-4">Category Name</label>
+							<label for="category_name" class="control-label col-md-4">Category
+								Name</label>
 							<div class="col-md-8">
-								<sf:input type="text" path="name" id="category_name" class="form-control"
-									placeholder="Category Name" />
+								<sf:input type="text" path="name" id="category_name"
+									class="form-control" placeholder="Category Name" />
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="category_description" class="control-label col-md-4">Category Description</label>
+							<label for="category_description" class="control-label col-md-4">Category
+								Description</label>
 							<div class="col-md-8">
-								<sf:textarea cols="" rows="5" path="description" id="category_description" class="form-control"
+								<sf:textarea cols="" rows="5" path="description"
+									id="category_description" class="form-control"
 									placeholder="Enter category description here!" />
 							</div>
 						</div>

@@ -101,6 +101,10 @@ footer {
 	color: #4582ec;
 }
 
+.table-responsive{
+	overflow-x: inherit;
+}
+
 /*Toggle Switch code*/
 
 /* The switch - the box around the slider */

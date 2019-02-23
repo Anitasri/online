@@ -25,19 +25,18 @@ $(function() {
 		break;
 	}
 
-	//to tackle the csrf token
-	var token=$('meta[name="_csrf"]').attr('content');
-var header = $('meta[name="_csrf_header"]').attr('content');
-	
-	if(token.length > 0 && header.length > 0) {	
-		// set the token header for the ajax request	
-		$(document).ajaxSend(function(e, xhr, options) {			
-			xhr.setRequestHeader(header,token);			
+	// to tackle the csrf token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+
+	if (token.length > 0 && header.length > 0) {
+		// set the token header for the ajax request
+		$(document).ajaxSend(function(e, xhr, options) {
+			xhr.setRequestHeader(header, token);
 		});
-		
+
 	}
-		
-	
+
 	// code for jquery dataTable
 
 	var $table = $('#itemListTable');
@@ -115,36 +114,28 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 											+ '/show/'
 											+ data
 											+ '/item" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
+									if (userRole == 'ADMIN') {
 
-									
-								
+										str += '<a href="'
+												+ window.contextRoot
+												+ '/manage/'
+												+ data
+												+ '/item" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
+									} else {
 										if (row.quantity < 1) {
 											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 										} else {
-											
-											if(userRole=='ADMIN'){
-												str += '<a href="'
-													+ window.contextRoot
-													+ '/manage/'
-													+ data
-													+ '/item" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
-											}
-											
-											else {
-	
 											str += '<a href="'
 													+ window.contextRoot
 													+ '/cart/add/'
 													+ data
 													+ '/item" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 										}
-										}
-									return str;
-										}
-										
 									}
+									return str;
+								}
 
-					]
+							}]
 
 				});
 
@@ -262,7 +253,7 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 								mRender : function(data, type, row) {
 
 									var str = '';
-									
+
 									str += '<a href="'
 											+ window.contextRoot
 											+ '/manage/'
@@ -348,8 +339,8 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 	// --------------------
 
 	// validate code for category
-	
-	//-------------------------------------------------------
+
+	// -------------------------------------------------------
 	var $categoryForm = $('#categoryForm');
 
 	if ($categoryForm.length) {
@@ -377,23 +368,22 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 			},
 			errorElement : "em",
 			errorPlacement : function(error, element) {
-				//add the class of help-block
+				// add the class of help-block
 				error.addClass('help-block');
-				//add the error element after the input element
+				// add the error element after the input element
 				error.insertAfter(element);
 			}
 		});
 
 	}
 
-	//-----------------------------------------------------------------
-	
-	
+	// -----------------------------------------------------------------
+
 	// --------------------
 
 	// validate code for login form
-	
-	//-------------------------------------------------------
+
+	// -------------------------------------------------------
 	var $loginForm = $('#loginForm');
 
 	if ($loginForm.length) {
@@ -421,16 +411,15 @@ var header = $('meta[name="_csrf_header"]').attr('content');
 			},
 			errorElement : "em",
 			errorPlacement : function(error, element) {
-				//add the class of help-block
+				// add the class of help-block
 				error.addClass('help-block');
-				//add the error element after the input element
+				// add the error element after the input element
 				error.insertAfter(element);
 			}
 		});
 
 	}
 
-	//-----------------------------------------------------------------
-	
-	
+	// -----------------------------------------------------------------
+
 });
