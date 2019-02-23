@@ -52,7 +52,7 @@
 								</a></li>
 								<li role="separator" class="divider"></li>
 							</security:authorize>
-							<li><a href="${contextRoot}/logout">Logout</a></li>
+							<li><a href="${contextRoot}/perform-logout">Logout</a></li>
 						</ul></li>
 				</security:authorize>
 			</ul>
