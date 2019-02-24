@@ -75,6 +75,22 @@ VALUES ('ITMABCXYZDEFX', 'Sunrise Smoothie Bowl', 'Smoothie', 'Fresh cream, saff
 INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('ITM23C1D1AC74', 'Peri Peri Grilled Chicken Steak', 'Steak', 'Slices of peri-peri spiced, grilled chicken-breasts are served with peppered, assorted veggies and a basil-flavoured cheese jus! Serves 1', 200, 3, true, 1, 1, 0, 0 );
 
+--cart line table
+
+CREATE TABLE cart_line(
+id IDENTITY,
+card_id int,
+total DECIMAL(10,2),
+item_id int,
+item_count int,
+buying_price DECIMAL(10,2),
+is_available boolean,
+CONSTRAINT fk_cartline_cart_id FOREIGN KEY (cart_id) REFERENCES cart (id),
+CONSTRAINT fk_cartline_item_id FOREIGN KEY (item_id) REFERENCES item (id),
+CONSTRAINT pk_cartline_id PRIMARY KEY (id),
+);
+
+
 
 SELECT * FROM CATEGORY ;
 SELECT * FROM ITEM ;

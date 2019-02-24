@@ -24,8 +24,5 @@ public interface UserDAO {
 	// Alternative = runs so many queries
 	//Address getBillingAddress(User user);
 	//List<Address> listShippingAddresses(User user);
-    
-	// add an cart
-	boolean updateCart(Cart cart);
 
 }

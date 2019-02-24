@@ -105,8 +105,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
-
 		<finalName>onlineFE</finalName>
 	</build>
 

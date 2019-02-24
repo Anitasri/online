@@ -32,20 +32,20 @@
 			<ul class="nav navbar-nav navbar-right">
 				<security:authorize access="isAnonymous()">
 					<li id="register" class="nav-item"><a class="nav-link"
-						href="${contextRoot }/register">Sign Up</a></li>
+						href="${contextRoot}/register">Sign Up</a></li>
 					<li id="login" class="nav-item"><a class="nav-link"
-						href="${contextRoot }/login">Login</a></li>
+						href="${contextRoot}/login">Login</a></li>
 				</security:authorize>
 
 				<!-- Logout code -->
 				<security:authorize access="isAuthenticated()">
-					<li class="dropdown"><a href="javascript:void(0)"
+					<li class="dropdown" id="userCart"><a href="javascript:void(0)"
 						id="dropdownMenu1" data-toggle="dropdown">${userModel.fullName}<span
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
 							<security:authorize access="hasAuthority('USER')">
-								<li><a href="${contextRoot}/cart"> <span
+								<li><a href="${contextRoot}/cart/show"> <span
 										class="glyphicon glyphicon-shopping-cart"></span> <span
 										class="badge">${userModel.cart.cartLines}</span> - &#8377;
 										${userModel.cart.grandTotal}

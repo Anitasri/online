@@ -231,6 +231,15 @@ input:checked + .slider:before {
     border-top: 2px solid;
 }
 
+.cartImg {
+	width: 100px;
+	height:100px;
+}
+
+.unavailable {
+	color: red;
+	
+}
 
 /* landing css */
 
