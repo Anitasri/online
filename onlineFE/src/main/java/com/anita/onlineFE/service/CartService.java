@@ -39,7 +39,7 @@ public class CartService {
 		return ((UserModel) session.getAttribute("userModel")).getCart();
 	}
 
-	public String updateCartLine(int cartLineId, int count) {
+	public String manageCartLine(int cartLineId, int count) {
 		// TODO Auto-generated method stub
 
 		CartLine cartLine = cartLineDAO.get(cartLineId);
@@ -52,8 +52,9 @@ public class CartService {
 			Item item = cartLine.getItem();
 			double oldTotal = cartLine.getTotal();
 
-			if (item.getQuantity() <= count) {
-				count = item.getQuantity();
+			//if item is available
+			if (item.getQuantity() <count) {
+				return "result=unavailable";
 			}
 
 			// update the cart line
@@ -89,6 +90,50 @@ public class CartService {
 
 			return "result=deleted";
 		}
+	}
+
+	public String addCartLine(int itemId) {
+
+		String response = null;
+		Cart cart = this.getCart();
+		CartLine cartLine = cartLineDAO.getByCartAndItem(cart.getId(), itemId);
+		if(cartLine==null) {
+			// add a new cartLine if a new item is getting added
+			cartLine = new CartLine();
+			Item item = itemDAO.get(itemId);
+			
+			// transfer the item details to cartLine
+						cartLine.setCartId(cart.getId());
+						cartLine.setItem(item);
+						cartLine.setItemCount(1);
+						cartLine.setBuyingPrice(item.getUnitPrice());
+						cartLine.setTotal(item.getUnitPrice());
+						cartLine.setAvailable(true);
+						
+						// insert a new cartLine
+						cartLineDAO.add(cartLine);
+						
+						// update the cart
+						cart.setGrandTotal(cart.getGrandTotal() + cartLine.getTotal());
+						cart.setCartLines(cart.getCartLines() + 1);
+						cartLineDAO.updateCart(cart);
+
+						response = "result=added";				
+		}
+		else {
+			// check if the cartLine has been already reached to maximum count
+			if(cartLine.getItemCount() < 3) {
+				// call the manageCartLine method to increase the count
+				response = this.manageCartLine(cartLine.getId(), cartLine.getItemCount() + 1);				
+			}			
+			else {				
+				response = "result=maximum";				
+			}						
+		}	
+		
+		
+		return response;
+		
 	}
 
 }
