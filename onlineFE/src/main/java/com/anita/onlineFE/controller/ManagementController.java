@@ -28,7 +28,6 @@ import com.anita.onlineFE.validator.ItemValidator;
 
 @Controller
 @RequestMapping("/manage")
-
 public class ManagementController {
 
 	@Autowired
@@ -113,7 +112,7 @@ public class ManagementController {
 			//update the item if id is not zero
 			itemDAO.update(mItem);	
 		}
-		
+		//upload the file
 		if(!mItem.getFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.uploadFile(request,mItem.getFile(),mItem.getCode());
 			

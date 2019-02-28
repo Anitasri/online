@@ -11,5 +11,4 @@
 <root level="INFO">
 		<appender-ref ref="consoleAppender"/>
 	</root>
-
 </configuration>

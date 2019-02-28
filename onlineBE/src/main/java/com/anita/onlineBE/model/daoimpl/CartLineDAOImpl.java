@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.anita.onlineBE.model.dao.CartLineDAO;
 import com.anita.onlineBE.model.dto.Cart;
 import com.anita.onlineBE.model.dto.CartLine;
-
+import com.anita.onlineBE.model.dto.OrderDetail;
 
 @Repository("cartLineDAO")
 @Transactional
@@ -18,22 +18,19 @@ public class CartLineDAOImpl implements CartLineDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
 	public CartLine getByCartAndItem(int cartId, int itemId) {
 		String query = "FROM CartLine WHERE cartId = :cartId AND item.id = :itemId";
 		try {
-			
-			return sessionFactory.getCurrentSession()
-									.createQuery(query,CartLine.class)
-										.setParameter("cartId", cartId)
-										.setParameter("itemId", itemId)
-											.getSingleResult();
-			
-		}catch(Exception ex) {
-			return null;	
+
+			return sessionFactory.getCurrentSession().createQuery(query, CartLine.class).setParameter("cartId", cartId)
+					.setParameter("itemId", itemId).getSingleResult();
+
+		} catch (Exception ex) {
+			return null;
 		}
-		
+
 	}
 
 	@Override
@@ -41,8 +38,7 @@ public class CartLineDAOImpl implements CartLineDAO {
 		try {
 			sessionFactory.getCurrentSession().persist(cartLine);
 			return true;
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
@@ -53,45 +49,40 @@ public class CartLineDAOImpl implements CartLineDAO {
 		try {
 			sessionFactory.getCurrentSession().update(cartLine);
 			return true;
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
 
 	@Override
-	public boolean delete(CartLine cartLine) {	
-		try {			
+	public boolean delete(CartLine cartLine) {
+		try {
 			sessionFactory.getCurrentSession().delete(cartLine);
 			return true;
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			return false;
-		}		
+		}
 	}
-
 
 	@Override
 	public List<CartLine> list(int cartId) {
 		String query = "FROM CartLine WHERE cartId = :cartId";
-		return sessionFactory.getCurrentSession()
-								.createQuery(query, CartLine.class)
-									.setParameter("cartId", cartId)
-										.getResultList();		
+		return sessionFactory.getCurrentSession().createQuery(query, CartLine.class).setParameter("cartId", cartId)
+				.getResultList();
 	}
 
 	@Override
-	public CartLine get(int id) {		
+	public CartLine get(int id) {
 		return sessionFactory.getCurrentSession().get(CartLine.class, Integer.valueOf(id));
 	}
 
 	@Override
 	public boolean updateCart(Cart cart) {
-		try {			
-			sessionFactory.getCurrentSession().update(cart);			
+		try {
+			sessionFactory.getCurrentSession().update(cart);
 			return true;
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			return false;
 		}
 	}
@@ -99,11 +90,18 @@ public class CartLineDAOImpl implements CartLineDAO {
 	@Override
 	public List<CartLine> listAvailable(int cartId) {
 		String query = "FROM CartLine WHERE cartId = :cartId AND available = :available";
-		return sessionFactory.getCurrentSession()
-								.createQuery(query, CartLine.class)
-									.setParameter("cartId", cartId)
-									.setParameter("available", true)
-										.getResultList();
+		return sessionFactory.getCurrentSession().createQuery(query, CartLine.class).setParameter("cartId", cartId)
+				.setParameter("available", true).getResultList();
 	}
-		
+
+	@Override
+	public boolean addOrderDetail(OrderDetail orderDetail) {
+		try {
+			sessionFactory.getCurrentSession().persist(orderDetail);
+			return true;
+		} catch (Exception ex) {
+			return false;
+		}
+	}
+
 }

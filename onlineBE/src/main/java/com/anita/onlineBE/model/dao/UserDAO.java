@@ -9,15 +9,15 @@ import com.anita.onlineBE.model.dto.User;
 public interface UserDAO {
 
 	// add an user
-	
 	User getByEmail(String email);
+	User get(int id);
 
 	boolean addUser(User user);
 
 	// add an address
+	Address getAddress(int addressId);
 	boolean addAddress(Address address);
-   
-	
+	boolean updateAddress(Address address);
 	Address getBillingAddress(int userId);
 	List<Address> listShippingAddresses(int userId);
 	

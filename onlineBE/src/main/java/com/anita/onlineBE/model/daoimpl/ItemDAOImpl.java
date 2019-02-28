@@ -19,7 +19,7 @@ public class ItemDAOImpl implements ItemDAO {
 	private SessionFactory sessionFactory;
 	
 	/*
-	 * SINGLE product
+	 * SINGLE ITEM
 	 * */
 	
 	@Override
@@ -142,9 +142,6 @@ public class ItemDAOImpl implements ItemDAO {
 					.setFirstResult(0)
 					.setMaxResults(count)
 					.getResultList();
-					
-		
 	}
 
-	
 }

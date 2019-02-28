@@ -34,7 +34,7 @@ public class PageController
 	private ItemDAO itemDAO;
 	
 	@RequestMapping(value = {"/", "/home", "/index"})
-	public ModelAndView index() 
+	public ModelAndView index(@RequestParam(name="logout",required=false)String logout) 
 	{		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","Home");
@@ -45,6 +45,9 @@ public class PageController
 		//passing the list of categories
 		mv.addObject("categories",categoryDAO.list());
 		
+		if(logout!=null) {
+			mv.addObject("message", "You have successfully logged out!");			
+		}
 		
 		mv.addObject("userClickHome",true);
 		return mv;
@@ -69,17 +72,13 @@ public class PageController
 	}
 	
 	// Method to load all items
-	
 	@RequestMapping(value = "/show/all/items")
 	public ModelAndView showAllItems() 
 	{		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","All Items");
-		
 		//passing the list of categories
 		mv.addObject("categories",categoryDAO.list());
-		
-		
 		mv.addObject("userClickAllItems",true);
 		return mv;
 	}
@@ -88,55 +87,42 @@ public class PageController
 	public ModelAndView showCategoryItems(@PathVariable("id") int id) 
 	{		
 		ModelAndView mv = new ModelAndView("page");		
-        
 		//categoryDAO to fetch a category
-		
 		Category category=null;
-		
 		category= categoryDAO.get(id);
-		
 		mv.addObject("title",category.getName());
-		
 		//passing the list of categories
 		mv.addObject("categories",categoryDAO.list());
-		
 		//passing single category object
-		
 		mv.addObject("category",category);
-		
 		mv.addObject("userClickCategoryItems",true);
-		
 		return mv;
 	}
 
 	//Viewing a single item
-	
-	
 	@RequestMapping(value = "/show/{id}/item") 
 	public ModelAndView showSingleItem(@PathVariable int id)  throws ItemNotFoundException {
-			
-		
 		ModelAndView mv = new ModelAndView("page");
-		
 		Item item = itemDAO.get(id);
-		
 		if(item == null) throw new ItemNotFoundException();
-		
 		// update the view count
 		item.setViews(item.getViews() + 1);
 		itemDAO.update(item);
-		
 		//---------------------------
-		
 		mv.addObject("title", item.getName());
 		mv.addObject("item", item);
-		
 		mv.addObject("userClickShowItem", true);
-		
-		
 		return mv;
-		
 	}
+	
+	//having similar mapping for flow id
+		@RequestMapping(value = {"/register"})
+		public ModelAndView register() 
+		{		
+			ModelAndView mv = new ModelAndView("page");		
+			mv.addObject("title","Register");
+			return mv;
+		}
 	
 	@RequestMapping(value="/login")
 	public ModelAndView login(@RequestParam(name="error", required = false)	String error,
@@ -149,7 +135,6 @@ public class PageController
 		if(logout!=null) {
 			mv.addObject("logout", "User has successfully logged out!");
 		}
-		
 		return mv;
 	}
 	
@@ -161,7 +146,6 @@ public class PageController
 	    if (auth != null){    
 	        new SecurityContextLogoutHandler().logout(request, response, auth);
 	    }
-		
 		return "redirect:/login?logout";
 	}	
 	
@@ -173,14 +157,5 @@ public class PageController
 		mv.addObject("title", "403 Access Denied");		
 		return mv;
 	}	
-	
-	//having similar mapping for flow id
-	@RequestMapping(value = {"/register"})
-	public ModelAndView register() 
-	{		
-		ModelAndView mv = new ModelAndView("page");		
-		mv.addObject("title","Register");
-		return mv;
-	}
 	
 }	

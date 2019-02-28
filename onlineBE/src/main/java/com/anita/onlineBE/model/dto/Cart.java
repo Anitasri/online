@@ -66,13 +66,4 @@ public class Cart implements Serializable {
 	public String toString() {
 		return "Cart [id=" + id + ", user=" + user + ", grandTotal=" + grandTotal + ", cartLines=" + cartLines + "]";
 	}
-
-	
-/*
-	 * linking the cart with a user
-	 * 
-	 * @OneToOne private User user; public User getUser() { return user; } public
-	 * void setUser(User user) { this.user = user; }
-	 */
-
 }

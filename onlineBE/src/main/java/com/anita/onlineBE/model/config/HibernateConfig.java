@@ -38,7 +38,6 @@ public class HibernateConfig {
 			dataSource.setUsername(DATABASE_USERNAME);
 			dataSource.setPassword(DATABASE_PASSWORD);
 					
-			
 			return dataSource;
 			
 		}
@@ -68,7 +67,6 @@ public class HibernateConfig {
 			properties.put("hibernate.dialect", DATABASE_DIALECT);		
 			properties.put("hibernate.show_sql", "true");
 			properties.put("hibernate.format_sql", "true");
-			
 			properties.put("hibernate.hbm2ddl.auto", "update");
 			
 			return properties;
@@ -81,6 +79,5 @@ public class HibernateConfig {
 			HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 			return transactionManager;
 		}
-		
-		
+			
 	}

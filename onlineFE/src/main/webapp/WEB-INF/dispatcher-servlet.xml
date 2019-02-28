@@ -15,8 +15,8 @@
     ">
 
 	<context:component-scan
-		base-package="com.anita.onlineFE"></context:component-scan>
-	
+		base-package="com.anita.onlineFE" />
+
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -48,24 +48,26 @@
 	</wf:flow-registry>
 
 	<wf:flow-builder-services
-		id="flowBuilderServices" view-factory-creator="viewFactoryCreator" validator="validator" />
+		id="flowBuilderServices" view-factory-creator="viewFactoryCreator"
+		validator="validator" />
 
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
-    <property name="flowExecutor" ref="flowExecutor" />
+	<bean
+		class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
 	</bean>
-	
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
-    <property name="flowRegistry" ref="flowRegistry" />
-    <property name="order" value="-1"></property>
+
+	<bean
+		class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="-1"></property>
 	</bean>
-	
+
 	<bean id="viewFactoryCreator"
-	class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
-	<property name="viewResolvers" ref="viewResolver" />
+		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<property name="viewResolvers" ref="viewResolver" />
 	</bean>
 
-<!-- Vaidator bean -->
-<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-
-
+	<!-- Vaidator bean -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 </beans>

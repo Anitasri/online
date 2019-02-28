@@ -16,7 +16,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="author" content="">
+
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,6 @@
 
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
-
 
 <title>Online Order for Eatables - ${title}</title>
 
@@ -45,7 +44,6 @@
 			</div>
 		</nav>
 			
-		
 		<div class="content">
 		
 			<div class="container">
@@ -53,8 +51,7 @@
 				<div class="row">
 				
 					<div class="col-xs-12">
-					
-						
+				
 						<div class="jumbotron">
 						
 							<h1>${errorTitle}</h1>
@@ -67,7 +64,6 @@
 							</blockquote>						
 						
 						</div>
-						
 											
 					</div>					
 				
@@ -80,9 +76,7 @@
 		<%@include file="./common/footer.jsp" %>
 
 	</div>
-		
 	
 </body>
-
 
 </html>

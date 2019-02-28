@@ -61,7 +61,7 @@
 			
 			</c:choose>
 			
-			<security:authorize access="hasAuthority('USER')">	
+			<security:authorize access="isAnonymous() or hasAuthority('USER')">	
 			<c:choose>
 			
 				<c:when test="${item.quantity < 1}">

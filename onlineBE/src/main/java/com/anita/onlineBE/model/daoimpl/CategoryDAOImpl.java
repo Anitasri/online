@@ -20,22 +20,16 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	 
-	
-	
-		@SuppressWarnings("unchecked")
 		@Override
 		public List<Category> list() {
 		
 			String selectActiveCategory = "FROM Category WHERE active = :active";
 			
-			@SuppressWarnings("rawtypes")
 			Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
 					
 			query.setParameter("active", true);
 							
 			return query.getResultList();
-			
-		
 	}
 
 		//Getting single category based on id
@@ -43,9 +37,6 @@ public class CategoryDAOImpl implements CategoryDAO {
 		@Override
 		public Category get(int id) {
         // TODO Auto-generated method stub
-		
-			
-			
 			return sessionFactory.getCurrentSession().get(Category.class, Integer.valueOf(id));
 		}
 

@@ -1,4 +1,12 @@
 $(function() {
+	
+	// for adding a loader
+	$(window).load(function(){
+		setTimeout(function() {
+			$(".se-pre-con").fadeOut("slow");
+		}, 500);			
+	});	
+	
 	// to solve active menu bar problem
 	switch (menu) {
 
@@ -13,12 +21,15 @@ $(function() {
 	case 'All Items':
 		$('#listItems').addClass('active');
 		break;
+		
 	case 'Manage Items':
 		$('#manageItems').addClass('active');
 		break;
+		
 	case 'User Cart':
 		$('#userCart').addClass('active');
 		break;
+		
 	default:
 		if (menu == "Home")
 			break;
@@ -273,39 +284,28 @@ $(function() {
 					initComplete : function() {
 
 						var api = this.api();
-						api
-								.$('.switch input[type="checkbox"]')
-								.on(
-										'change',
-										function() {
-
+						api.$('.switch input[type="checkbox"]').on('change',function() {
 											var checkbox = $(this);
-											var checked = checkbox
-													.prop('checked');
+											var checked = checkbox.prop('checked');
 											var dMsg = (checked) ? 'You want to activate the item?'
 													: 'You want to deactivate the item?';
 											var value = checkbox.prop('value');
 
-											bootbox
-													.confirm({
+											bootbox.confirm({
 														size : 'small',
 														title : 'Item Activation & Deactivation',
 														message : dMsg,
-														callback : function(
-																confirmed) {
+														callback : function(confirmed) {
 
 															if (confirmed) {
 
-																console
-																		.log(value);
+																console.log(value);
 
 																var activationUrl = window.contextRoot
 																		+ '/manage/item/'
 																		+ value
 																		+ '/activation';
-																$
-																		.post(
-																				activationUrl,
+																$.post(activationUrl,
 																				function(
 																						data) {
 
@@ -381,6 +381,23 @@ $(function() {
 
 	// -----------------------------------------------------------------
 
+	// jQuery Validation Code
+
+	//methods required for validation
+	
+	function errorPlacement(error, element) {
+		// Add the 'help-block' class to the error element
+		error.addClass("help-block");
+		
+		// add the error label after the input element
+		error.insertAfter(element);
+		
+		
+		// add the has-feedback class to the
+		// parent div.validate in order to add icons to inputs
+		element.parents(".validate").addClass("has-feedback");	
+
+	}	
 	// --------------------
 
 	// validate code for login form
@@ -429,16 +446,14 @@ $(function() {
 	
 	$('button[name="refreshCart"]').click(function(){
 		var cartLineId = $(this).attr('value');
-		var countElement = $('#count_' + cartLineId);
-		
-		var originalCount = countElement.attr('value');
-		var currentCount=countElement.val();
+		var countField = $('#count_' + cartLineId);
+		var originalCount = countField.attr('value');
 		// do the checking only the count has changed
-		if(currentCount!== originalCount) {	
+		if(countField.val() !== originalCount) {	
 			// check if the quantity is within the specified range
-			if(currentCount() < 1 || currentCount > 3) {
+			if(countField.val() < 1 || countField.val() > 3) {
 				// set the field back to the original field
-				countElement.val(originalCount);
+				countField.val(originalCount);
 				bootbox.alert({
 					size: 'medium',
 			    	title: 'Error',
@@ -447,11 +462,11 @@ $(function() {
 			}
 			else {
 				// use the window.location.href property to send the request to the server
-				var updateUrl = window.contextRoot + '/cart/' + cartLineId + '/update?count=' + currentCount;
+				var updateUrl = window.contextRoot + '/cart/' + cartLineId + '/update?count=' + countField.val();
 				window.location.href = updateUrl;
 			}
 		}
-	});			
+	});		
 	
 	//----------------------------------------------------
 	
