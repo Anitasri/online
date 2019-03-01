@@ -27,7 +27,7 @@
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
 
-<title>Online Order for Eatables - ${title}</title>
+<title>Online Order for Eatables -Error</title>
 
 </head>
 

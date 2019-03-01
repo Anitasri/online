@@ -1,7 +1,7 @@
-<!-- DataTable Bootstrap Script -->
+<!-- Angular Script -->
 <script src="${js}/angular.js"></script>
 
-<!-- DataTable Bootstrap Script -->
+<!-- Item controller Script -->
 <script src="${js}/itemsController.js"></script>
 
 <div class="container" ng-app="ShoppingApp"

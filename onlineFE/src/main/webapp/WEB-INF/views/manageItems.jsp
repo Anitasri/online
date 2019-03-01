@@ -38,8 +38,6 @@
 						action="${contextRoot}/manage/items" method="POST"
 						enctype="multipart/form-data">
 
-
-
 						<div class="form-group">
 
 							<label class="control-label col-md-4" for="name">Enter
@@ -65,7 +63,6 @@
 								<sf:input type="text" path="foodType" id="foodType"
 									placeholder="Food Type" class="form-control" />
 								<sf:errors path="foodType" cssClass="help-block" element="em" />
-
 
 							</div>
 
@@ -206,8 +203,6 @@
 								<th>Edit</th>
 							</tr>
 						</thead>
-
-
 
 						<tfoot>
 							<tr>

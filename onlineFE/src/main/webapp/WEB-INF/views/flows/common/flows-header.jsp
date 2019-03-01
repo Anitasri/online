@@ -37,7 +37,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
-<title>Online Order for Eatables-${title}</title>
+<title>Online Order for Eatables - Register</title>
 
 <script>
 	window.menu = '${title}';

@@ -4,7 +4,6 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 	
-
 	<var name="shipping" class="com.anita.onlineBE.model.dto.Address"/>
 	
 	<on-start>

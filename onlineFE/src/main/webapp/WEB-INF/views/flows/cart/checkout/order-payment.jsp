@@ -10,9 +10,9 @@
 					<div class="col-xs-12">
 						
 						<div>
-							<h3>${cartLine.product.name}</h3>
+							<h3>${cartLine.item.name}</h3>
 							<hr/>
-							<h4>Quantity -${cartLine.productCount}</h4>
+							<h4>Quantity -${cartLine.itemCount}</h4>
 							<h5>Buying Price - &#8377; ${cartLine.buyingPrice}/-</h5>							
 						</div>						
 						<hr/>
