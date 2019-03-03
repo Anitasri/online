@@ -4,13 +4,13 @@
 <!-- Item controller Script -->
 <script src="${js}/itemsController.js"></script>
 
-<div class="container" ng-app="ShoppingApp"
-	ng-controller="ItemController as iCtrl">
+<div class="container" data-ng-app="ShoppingApp"
+	data-ng-controller="ItemController as iCtrl">
 
-	<div class="row" ng-init="iCtrl.fetchItems()">
+	<div class="row" data-ng-init="iCtrl.fetchItems()">
 
 		<div class="col-lg-3">
-			<!-- Sidebar of 3 categories -->
+			<!-- SideBar of 3 categories -->
 			<%@include file="./common/sidebar.jsp"%>
 		</div>
 
@@ -35,7 +35,7 @@
 									alt="First slide" width="900" height="350">
 							</div>
 							<div class="carousel-item">
-								<img class="d-block img-fluid" src="${images }/CSlider2.jpg"
+								<img class="d-block img-fluid" src="${images}/CSlider2.jpg"
 									alt="Second slide" width="900" height="350">
 							</div>
 							<div class="carousel-item">
@@ -67,15 +67,15 @@
 
                 <div class="row is-table-row">
                 	
-                    <div class="col-sm-4" ng-repeat="item in iCtrl.mvItems">                    	
+                    <div class="col-sm-4" data-ng-repeat="item in iCtrl.mvItems">                    	
                         <div class="thumbnail">
-                            <img ng-src="${images}/{{item.code}}.jpg" alt="{{item.name}}" class="landingImg">
+                            <img data-ng-src="${images}/{{item.code}}.jpg" alt="{{item.name}}" class="landingImg">
                             <h5>{{item.name}}</h5>
                             <hr/>
                             <div class="caption">
                                 <h4 class="pull-right">&#8377; {{item.unitPrice}}</h4>
                                 <p>{{item.description}}</p>
-                                <a ng-href="${contextRoot}/show/{{item.id}}/item" class="btn btn-primary pull-right">View</a>
+                                <a data-ng-href="${contextRoot}/show/{{item.id}}/item" class="btn btn-primary pull-right">View</a>
                             </div>
                         </div>
                         
@@ -97,15 +97,15 @@
                 </div>
                <div class="row is-table-row">
                 	
-                    <div class="col-sm-4" ng-repeat="item in iCtrl.mpItems">                    	
+                    <div class="col-sm-4" data-ng-repeat="item in iCtrl.mpItems">                    	
                         <div class="thumbnail">
-                            <img ng-src="${images}/{{item.code}}.jpg" alt="{{item.name}}" class="landingImg">
+                            <img data-ng-src="${images}/{{item.code}}.jpg" alt="{{item.name}}" class="landingImg">
                             <h5>{{item.name}}</h5>
                             <hr/>
                             <div class="caption">
                                 <h4 class="pull-right">&#8377;{{item.unitPrice}}</h4>
                                 <p>{{item.description}}</p>
-                                <a ng-href="${contextRoot}/show/{{item.id}}/item" class="btn btn-primary pull-right">View</a>
+                                <a data-ng-href="${contextRoot}/show/{{item.id}}/item" class="btn btn-primary pull-right">View</a>
                             </div>
                         </div>
                     </div>
@@ -123,4 +123,3 @@
 	</div>
 
 </div>
-<!-- /.container -->

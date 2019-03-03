@@ -24,7 +24,7 @@
 <!-- Bootstrap CSS -->
 
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -48,7 +48,7 @@
 </script>
 
 <!-- Bootstrap core CSS -->
-<link href="${css}/bootstrap.min.css" rel="stylesheet">
+
 
 <!-- Bootstarp sketchy theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
