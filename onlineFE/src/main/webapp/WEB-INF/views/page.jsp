@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -36,8 +37,7 @@
 <script
 	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
 
 <title>Online Order for Eatables-${title}</title>
 
@@ -126,7 +126,7 @@
 		<script src="${js}/dataTables.bootstrap.js"></script>
 
 		<!-- Bootbox js -->
-		<script src="${js}/bootbox.min.js"></script>
+		<script	src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
