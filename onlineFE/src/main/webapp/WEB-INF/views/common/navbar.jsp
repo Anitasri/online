@@ -25,7 +25,7 @@
 			    <li id="about"><a href="${contextRoot}/home">Home</a></li>
 				<li id="about"><a href="${contextRoot}/about">About Us</a></li>
 				<li id="listItems"><a href="${contextRoot}/show/all/items">View Items</a></li>
-				<li id="contact"><a	href="${contextRoot}/contact">Contact</a></li>
+				<li id="contact"><a	href="${contextRoot}/contact">Contact Us</a></li>
 
 				<security:authorize access="hasAuthority('ADMIN')">
 					<li id="manageItems"><a href="${contextRoot }/manage/items">Manage Items</a></li>
