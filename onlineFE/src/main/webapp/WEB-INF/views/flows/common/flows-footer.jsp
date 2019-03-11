@@ -13,7 +13,7 @@
 		<script src="${js}/dataTables.bootstrap.js"></script>
 
 		<!-- Bootbox js -->
-		<script	src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+		<script src="${js}/bootbox.min.js"></script>
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>

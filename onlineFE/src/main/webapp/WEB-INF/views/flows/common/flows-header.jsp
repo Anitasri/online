@@ -2,12 +2,13 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
 <spring:url var="images" value="/resources/images" />
 
-<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,36 +20,19 @@
 <meta name="description"
 	content="Order online food site using Spring MVC and Hibernate">
 
-<!-- Bootstrap CSS -->
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css"
-	href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<script
-	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-
-
-
-<title>Online Order for Eatables - Register</title>
+<title>Online Order for Eatables-${title}</title>
 
 <script>
 	window.menu = '${title}';
-
-	window.contextRoot = '${contextRoot}'
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
 
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstarp sketchy theme -->
-<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+<link href="${css}/template-theme-cyborg.css" rel="stylesheet">
 
 <!-- Bootstarp Datatables -->
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
@@ -59,8 +43,8 @@
 </head>
 
 <body>
-
-   <div class="se-pre-con"></div>
+	
+	<!-- to avoid footer prblm wrap the whole body in class called wrapper -->
 	<div class="wrapper">
 
 		<!-- Navigation -->
@@ -68,5 +52,6 @@
 		<%@include file="flows-navbar.jsp"%>
 
 		<!-- Page Content -->
-
+        
+        <!-- to avoid footer prblm wrap the page content in class called content -->
 		<div class="content">

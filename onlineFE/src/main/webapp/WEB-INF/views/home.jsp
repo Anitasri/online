@@ -29,21 +29,21 @@
 							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
 						</ol>
-						<div class="carousel-inner" role="listbox">
-							<div class="carousel-item active">
-								<img class="d-block img-fluid" src="${images}/CSlider1.jpg"
+						<div class="carousel-inner">
+							<div class="item active">
+								<img class="slide-image" src="${images}/CSlider1.jpg"
 									alt="First slide" width="900" height="350">
 							</div>
-							<div class="carousel-item">
-								<img class="d-block img-fluid" src="${images}/CSlider2.jpg"
+							<div class="item">
+								<img class="slide-image" src="${images}/CSlider2.jpg"
 									alt="Second slide" width="900" height="350">
 							</div>
-							<div class="carousel-item">
-								<img class="d-block img-fluid" src="${images}/CSlider3.jpg"
+							<div class="item">
+								<img class="slide-image" src="${images}/CSlider3.jpg"
 									alt="Third slide" width="900" height="350">
 							</div>
-							<div class="carousel-item">
-								<img class="d-block img-fluid" src="${images}/CSlider4.jpg"
+							<div class="item">
+								<img class="slide-image" src="${images}/CSlider4.jpg"
 									alt="Fourth slide" width="900" height="350">
 							</div>
 						</div>
