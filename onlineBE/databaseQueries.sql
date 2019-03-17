@@ -16,32 +16,6 @@ INSERT INTO category (name, description,image_url,is_active) VALUES ('Desserts',
 INSERT INTO category (name, description,image_url,is_active) VALUES ('Chat & Snacks', 'Enjoy your snack!', 'CSlider4.png', true);
 
 
-CREATE TABLE user_detail (
-	id IDENTITY,
-	first_name VARCHAR(50),
-	last_name VARCHAR(50),
-	role VARCHAR(50),
-	enabled BOOLEAN,
-	password VARCHAR(60),
-	email VARCHAR(100),
-	contact_number VARCHAR(15),	
-	CONSTRAINT pk_user_id PRIMARY KEY(id)
-	
-);
-
-
--- adding three users 
-INSERT INTO user_detail 
-(first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Anita', 'Sri', 'ADMIN', true, '$2y$12$tEW50HtLvl1KtqjpsZ1XNOjGkqrq.2mV8k2kxibua4vpIO/SyM/p2', 'as@gmail.com', '8888888888');
-INSERT INTO user_detail 
-(first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Shahid', 'Kapoor', 'USER', true, '$2a$10$8PQUj4CVQUYkyYF..Q9TvuVDByfJ3XUHAl31JZzxwNa6NuDGbBWL2', 'shka@gmail.com', '1111111111');
-INSERT INTO user_detail 
-(first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Keerthi', 'Das', 'SUPPLIER', true, '$2y$12$icRl6mClcIeZPpbrp8B9t.VT6X8yq3ETiZzw7owzASw/eqZ4Hrdoy', 'kd@gmail.com', '7777777777');
-
-
 CREATE TABLE item (
 	id IDENTITY,
 	code VARCHAR(20),
@@ -80,8 +54,6 @@ VALUES ('ITME179915F05', 'Chilli Garlic Potatoes', 'Starter', 'Marinade, stir-fr
 INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('ITMC7DA18F6BB', 'Southwestern Fried Chicken Strips', 'Starter', 'Strips of deboned chicken marinated in Cajun-spiced yogurt, are breaded, deep fried and served with a hot, sweet and creamy jalapeño-mango-mayo dip. Serves 2-3.', 146, 4, true, 1, 2, 0,	0);
 INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
-VALUES ('ITM36FF3B6F5F', 'Paneer Bhurji Bunny Chow', 'Snack', 'Bunny chow is essentially a piping hot curry — housed inside a hollow loaf of bread. Eat your way from the top which has paneer bhurji, reaching the delectably curry-soaked pickled veggies and cheese sauce remnants at the bottom', 123, 7, true, 4, 2, 0, 0);
-INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('ITMC7417C8A60', 'Shroom Chicken Burger', 'Burger', 'Succulent Chicken mince patty is marinated in a sensational BBQ sauce then lightly pan fried. Served in a fresh burger bun with slaw, this amazing dish will become a quick family favorite.', 112, 3, true, 2, 1, 0, 0);
 INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('ITM215723363C', 'Grilled Paneer Teriyaki Salad', 'Salad', 'Diced, grilled paneer, sprouts, bell pepper, zucchini and lettuce are seasoned, served with a rice-wine-vinegar infused teriyaki sauce, for you to do the honors…', 119, 3, true, 1, 1, 0, 0);
@@ -91,9 +63,49 @@ INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_a
 VALUES ('ITMB3AE24B255', 'Blueberry Galaxy Pastry', 'Pastry', 'Vanilla sponge layered with toasted almond, cream cheese and blueberry compote is rounded up with blueberry glaze, star-shaped chocolate slabs and edible confetti. Serves 1', 100, 10, true, 3, 1, 0, 0);
 INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('ITM691C18F454', 'Pepper Masala Chicken Dum Biriyani', 'Biriyani', 'Featuring pepper masala chicken made with our own in-house recipe, flavoured with aromatic ingredients, spiced with black pepper and served with a delicious raita at the side, this is chicken biriyani-bliss reinvented.', 330, 15, true, 2, 1, 0, 0);
+INSERT INTO item (code, name, food_type, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
+VALUES ('ITM36FF3B6F5F', 'Paneer Bhurji Bunny Chow', 'Snack', 'Bunny chow is essentially a piping hot curry — housed inside a hollow loaf of bread. Eat your way from the top which has paneer bhurji, reaching the delectably curry-soaked pickled veggies and cheese sauce remnants at the bottom', 123, 7, true, 2, 2, 0, 0);
+
+SELECT * FROM CATEGORY ;
+SELECT * FROM ITEM ;
+
+DROP TABLE CATEGORY;
+DROP TABLE ITEM;
+
+DELETE FROM ITEM WHERE id=14;
+
+
+
+
+
+CREATE TABLE user_detail (
+	id IDENTITY,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	role VARCHAR(50),
+	enabled BOOLEAN,
+	password VARCHAR(60),
+	email VARCHAR(100),
+	contact_number VARCHAR(15),	
+	CONSTRAINT pk_user_id PRIMARY KEY(id)
+	
+);
+
+
+-- adding three users 
+INSERT INTO user_detail 
+(first_name, last_name, role, enabled, password, email, contact_number) 
+VALUES ('Anita', 'Sri', 'ADMIN', true, '$2y$12$tEW50HtLvl1KtqjpsZ1XNOjGkqrq.2mV8k2kxibua4vpIO/SyM/p2', 'as@gmail.com', '8888888888');
+INSERT INTO user_detail 
+(first_name, last_name, role, enabled, password, email, contact_number) 
+VALUES ('Shahid', 'Kapoor', 'USER', true, '$2a$10$8PQUj4CVQUYkyYF..Q9TvuVDByfJ3XUHAl31JZzxwNa6NuDGbBWL2', 'shka@gmail.com', '1111111111');
+INSERT INTO user_detail 
+(first_name, last_name, role, enabled, password, email, contact_number) 
+VALUES ('Keerthi', 'Das', 'SUPPLIER', true, '$2y$12$icRl6mClcIeZPpbrp8B9t.VT6X8yq3ETiZzw7owzASw/eqZ4Hrdoy', 'kd@gmail.com', '7777777777');
+
+
 
 --cart line table
-
 CREATE TABLE cart_line(
 id IDENTITY,
 card_id int,
